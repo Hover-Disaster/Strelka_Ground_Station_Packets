@@ -14,7 +14,14 @@
 #include "Controller.h"
 #include "Testing.h"
 #include "Sensors.h"
-#include "stm32f4xx_hal.h"
+
+#ifdef STM32F4
+	#include "stm32f4xx_hal.h"
+#elif defined (STM32H7)
+	#include "stm32h7xx_hal.h"
+#else
+#error "STM32 series not defined"
+#endif
 
 /* Enable Hardware In The Loop by uncommenting */
 //#define RUN_HITL
