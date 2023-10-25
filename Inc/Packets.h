@@ -15,12 +15,12 @@
 #include "Testing.h"
 #include "Sensors.h"
 
-#ifdef STM32F4
+#if defined (USE_STM32F4)
 	#include "stm32f4xx_hal.h"
-#elif defined (STM32H7)
+#elif defined (USE_STM32H7)
 	#include "stm32h7xx_hal.h"
 #else
-#error "STM32 series not defined"
+#error "STM32 series not defined for non-standard library"
 #endif
 
 /* Enable Hardware In The Loop by uncommenting */
