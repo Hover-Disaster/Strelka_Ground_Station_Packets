@@ -15,13 +15,9 @@
 #include "Testing.h"
 #include "Sensors.h"
 
-#if defined (USE_STM32F4)
-	#include "stm32f4xx_hal.h"
-#elif defined (USE_STM32H7)
-	#include "stm32h7xx_hal.h"
-#else
-#error "STM32 series not defined for non-standard library"
-#endif
+ /* Select the relevent includes for your STM32 hardware version */
+//#include "stm32f4xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 /* Enable Hardware In The Loop by uncommenting */
 //#define RUN_HITL
